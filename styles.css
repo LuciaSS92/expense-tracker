@@ -1,0 +1,38 @@
+body {
+  text-align: center;
+  font-size: 1em;
+  font-family: Arial;
+}
+
+h2,
+#total {
+  color: #c40ee0;
+}
+
+#sumDeposits,
+#deposits {
+  color: rgb(20, 194, 20);
+}
+
+#sumExpenses,
+#expenses {
+  color: red;
+}
+
+#sumDeposits,
+#sumExpenses,
+#total {
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 40px;
+  margin: auto 40%;  
+  padding: 20px;
+  height: auto;
+  width: auto;
+  
+}
+
+#concept,
+#amount {
+  padding: 10px;
+  margin: 5px;
+}

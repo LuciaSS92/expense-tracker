@@ -31,7 +31,7 @@ function showTotals() {
   let totalExpenses = 0;
 
   for (let i = 0; i < myLength; ++i) {
-    let onlyAmount = parseInt(elements[i].innerHTML.replace("Cantidad: ", ""));
+    let onlyAmount = parseFloat(elements[i].innerHTML.replace("Cantidad: ", ""));
     total += onlyAmount;
 
     if (onlyAmount > 0) {

@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gestor</title>
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <h1>Control de gastos</h1>
     <h2>TU AHORRO</h2>
     <p id="total">0.00 €</p>
-    
 
     <section>
       <h3 id="deposits">INGRESOS</h3>
@@ -22,11 +22,11 @@
     <h4>Añadir nueva transacción</h4>
     <form id="newTransaction" novalidate>
       <label for="concept">Concepto</label>
-      <input id="concept" type="text" placeholder="Añade concepto..." />
-      <label for="amount">Cantidad</label>
-      <p id="explanation">(negativo: gasto, positivo: ingreso</p>
+      <input id="concept" type="text" placeholder="Añade concepto..." /><br>
+      <label for="amount">Cantidad</label>      
       <input id="amount" type="number" placeholder="Introduce cantidad..." />
-      <button id="add" type="submit" >Añadir transaccion</button>
+      <p id="explanation">(negativo: gasto, positivo: ingreso)</p>
+      <button id="add" type="submit">Añadir transaccion</button>
     </form>
 
     <h4>Historial</h4>
