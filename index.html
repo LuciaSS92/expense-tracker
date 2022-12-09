@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestor</title>
+  </head>
+  <body>
+    <h1>Control de gastos</h1>
+    <h2>TU AHORRO</h2>
+    <p id="total">0.00 €</p>
+    
+
+    <section>
+      <h3 id="deposits">INGRESOS</h3>
+      <section id="sumDeposits">0.00 €</section>
+      <h3 id="expenses">GASTOS</h3>
+      <section id="sumExpenses">0.00 €</section>
+    </section>
+
+    <h4>Añadir nueva transacción</h4>
+    <form id="newTransaction" novalidate>
+      <label for="concept">Concepto</label>
+      <input id="concept" type="text" placeholder="Añade concepto..." />
+      <label for="amount">Cantidad</label>
+      <p id="explanation">(negativo: gasto, positivo: ingreso</p>
+      <input id="amount" type="number" placeholder="Introduce cantidad..." />
+      <button id="add" type="submit" >Añadir transaccion</button>
+    </form>
+
+    <h4>Historial</h4>
+    <section id="movement-list"></section>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
