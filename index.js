@@ -1,5 +1,6 @@
 const newMovementElement = document.querySelector("#newTransaction");
 const movementListElement = document.querySelector("#movement-list");
+let counter = 0;
 
 // Crear nuevos movimientos
 newMovementElement.addEventListener("submit", (event) => {
@@ -11,7 +12,10 @@ newMovementElement.addEventListener("submit", (event) => {
   let newMovement = {
     newConcept: concept.value,
     newAmount: amount.value,
+    newId: counter,
   };
+
+  counter += 1;
 
   // Borra lo que se escribió en cada campo
   concept.value = "";
@@ -31,7 +35,9 @@ function showTotals() {
   let totalExpenses = 0;
 
   for (let i = 0; i < myLength; ++i) {
-    let onlyAmount = parseFloat(elements[i].innerHTML.replace("Cantidad: ", ""));
+    let onlyAmount = parseFloat(
+      elements[i].innerHTML.replace("Cantidad: ", "")
+    );
     total += onlyAmount;
 
     if (onlyAmount > 0) {
@@ -50,12 +56,12 @@ function showTotals() {
 function showMovements(movement) {
   const movementElement = document.createElement("article");
 
-  movementElement.setAttribute("id", movement.id);
+  movementElement.setAttribute("id", movement.newId);
 
   let movementContent = `
       <p>Concepto: ${movement.newConcept}</p>
       <p class="addedAmounts">Cantidad: ${movement.newAmount}</p>
-      <button onclick="deleteMovement(${movement.id})"> X </button>
+      <button onclick="deleteMovement(${movement.newId})"> X </button>
           `;
 
   movementElement.innerHTML = movementContent;
@@ -64,7 +70,8 @@ function showMovements(movement) {
 
 // Borrar movimientos
 function deleteMovement(movementId) {
+  console.log(movementId);
   const movementElement = document.getElementById(movementId);
   movementElement.remove();
-  showTotals()
+  showTotals();
 }
